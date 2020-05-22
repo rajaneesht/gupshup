@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  
+  <title>Realtime communication with WebRTC</title>
+
+  <link rel="stylesheet" href="/css/main.css?1x22" />
+
+  <!-- <link rel="stylesheet" media="screen and max-resolution: 1dppx" href="/css/mobile.css?sxff" /> -->
+
+  <!-- <meta name="viewport" content="width=96dpi, initial-scale=1"> -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">  -->
+
+</head>
+
+<body>
+
+  <div class="grid-container-1">
+    <div class="grid-item" >
+      <h2>Gupshup Meeting Hub</h2>
+    </div>
+    <div class="grid-item" >
+      <div id="roomlist" name="roomlist"><ul id="lst"></ul></div>
+    </div>
+    <div class="grid-item" >
+      <label for="roomID">Meeting ID:</label>
+      <input type="text" id="roomID" name="roomID">
+      <button id="btnJoinRoom" name="btnJoinRoom">Login Room</button><br>
+      <div id="msg" name="msg">...</div>
+      <!-- <button id="btnStartCam" name="btnStartCam">Start Cam</button> -->
+      <button id="btnCallRemoteRoom" name="btnCallRemoteRoom">Start Call</button>
+      <button id="btnHangUp" name="btnHangUp">Hang Up</button>
+      <!-- <button id="btnRemoteHangUp" name="btnRemoteHangUp">Remote Hangup</button>
+      <button id="btnLeaveRoom" name="btnLeaveRoom">Leave Room - Bye</button> -->
+      
+    </div>
+    
+  </div>  
+  <br>
+  <div id="videos">
+   
+    <div class="grid-container">
+      <div class="grid-item"><video id="localVideo" autoplay muted></video><div style = "align-items: center;">My Video</div></div>
+      <div class="grid-item"><video id="remoteVideo" autoplay></video><div style = "align-items: center;">Peer Video</div></div>
+      
+    </div>
+
+    
+    
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/main.js?tcdss"></script>
+  
+</body>
+
+</html>

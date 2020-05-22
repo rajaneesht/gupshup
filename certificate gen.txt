@@ -1,0 +1,24 @@
+OpenSSL> genrsa -out 192.168.1.14.key 2048
+
+OpenSSL> req -new -x509 -key 192.168.1.14.key -out 192.168.1.14.cert -days 3650
+-subj /CN=192.168.1.14 -config "F:\Program Files (x86)\GnuWin32\share\openssl.cn
+f"
+
+
+#source : https://www.kevinleary.net/self-signed-trusted-certificates-node-js-express-js/
+
+#this one finally worked . Getusermedia does not work if it's not secure and hence had to make my nodejs server https compliant that needed certificate generation : Rajaneesh . 
+
+#nodeserver code sample below to enable https
+
+// var options = {
+//   key: fs.readFileSync( './192.168.1.14.key' ),
+//   cert: fs.readFileSync( './192.168.1.14.cert' ),
+//   requestCert: false,
+//   rejectUnauthorized: false
+// };
+
+
+// var fileServer = new(nodeStatic.Server)();
+// var app = https.createServer(options,function(req, res) {
+

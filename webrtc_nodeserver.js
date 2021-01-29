@@ -71,7 +71,7 @@ io.sockets.on('connection', function(socket) {
       socket.broadcast.emit('joined', room, socket.id);
       io.sockets.in(room).emit('ready');
     } 
-    else { // max two clients
+    else { // max two clientskk
       socket.emit('full', room);
     }
   });
